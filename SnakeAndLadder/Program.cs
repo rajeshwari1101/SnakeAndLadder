@@ -8,8 +8,12 @@ namespace SnakeAndLadder
         {
             Console.WriteLine("Hello, World!");
             StartPosition player1 = new StartPosition();
+            StartPosition player2 = new StartPosition();
+            Console.WriteLine("Player 1: ");
             player1.Describe();
-            player1.PlayTillEnd();
+            Console.WriteLine("Player 2: ");
+            player2.Describe();
+            player1.PlayTillEnd(player2);
             Console.ReadKey();
         }
     }

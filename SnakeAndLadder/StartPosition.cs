@@ -119,13 +119,28 @@ internal class StartPosition
     }
 
     // This will roll die untill player wins
-    public void PlayTillEnd()
+    public void PlayTillEnd(StartPosition player2)
     {
-        while (winCheck is false)
-            RollDie();
-        Console.WriteLine("\nCongratulations!! You Won!!");
-        Console.WriteLine("Die was rolled " + totalDieRoll + " times");
+        while (this.winCheck is false && player2.winCheck is false)
+        {
+            Console.WriteLine("\nPlayer 1 turn: ");
+            this.RollDie();
+            this.Describe();
+            if (this.winCheck is true)
+                break;
+            Console.WriteLine("\nPlayer 2 turn: ");
+            player2.RollDie();
+            player2.Describe();
+        }
+        if (player2.winCheck is true)
+            Console.WriteLine("\nCongratulations Player 2!! You Won!!");
+        else
+            Console.WriteLine("\nCongratulations Player 1!! You Won!!");
+        Console.WriteLine("Player 1 Total die rolls: " + this.totalDieRoll);
+        Console.WriteLine("Player 2 Total die rolls: " + player2.totalDieRoll);
     }
+
+
 
 
 }
