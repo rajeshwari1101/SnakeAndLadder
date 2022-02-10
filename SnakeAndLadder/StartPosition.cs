@@ -68,4 +68,21 @@ internal class StartPosition
         Console.WriteLine("Going up by " + roll);
         position += roll;
     }
+
+
+    //Repeat till the Player reaches the winning position 100.
+    private void CheckBoundary()
+    {
+        if (position < 0)
+            position = 0;
+        else if (position >= 100)
+            position = 100;
+    }
+
+    public void PlayTillEnd()
+    {
+        while (position < 100)
+            RollDie();
+        Console.WriteLine("\nCongratulations!! You Won!!");
+    }
 }
