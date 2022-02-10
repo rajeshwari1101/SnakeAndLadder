@@ -9,6 +9,8 @@ namespace SnakeAndLadder
             Console.WriteLine("Hello, World!");
             StartPosition player1 = new StartPosition();
             player1.Describe();
+            player1.RollDie();
+            player1.Describe();
             Console.ReadKey();
         }
     }
