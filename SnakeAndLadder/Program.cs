@@ -1,2 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+namespace SnakeAndLadder
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+            StartPosition player1 = new StartPosition();
+            player1.Describe();
+            Console.ReadKey();
+        }
+    }
+}
+
