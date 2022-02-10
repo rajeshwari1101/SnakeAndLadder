@@ -10,6 +10,7 @@ internal class StartPosition
 {
     private int position;
     private bool winCheck;
+    private int totalDieRoll;
 
     static Random random = new Random();
 
@@ -17,7 +18,16 @@ internal class StartPosition
     {
         position = 0;
         winCheck = false;
+        totalDieRoll = 0;
     }
+
+    public void Reset()
+    {
+        position = 0;
+        winCheck = false;
+        totalDieRoll = 0;
+    }
+
 
     public void Describe()
     {
@@ -96,7 +106,7 @@ internal class StartPosition
     }
 
     // Move player acroos the board
-    
+
     private int MovePlayer(int displacement)
     {
         position += displacement;
@@ -114,5 +124,8 @@ internal class StartPosition
         while (winCheck is false)
             RollDie();
         Console.WriteLine("\nCongratulations!! You Won!!");
+        Console.WriteLine("Die was rolled " + totalDieRoll + " times");
     }
+
+
 }
